@@ -1,0 +1,35 @@
+.responsive-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.responsive-table td,
+.responsive-table th {
+	padding: 8px;
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+	.responsive-table thead {
+		display: none;
+	}
+
+	.responsive-table tr {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.responsive-table td {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.responsive-table td::before {
+		content: attr(data-label);
+		font-weight: bold;
+		flex-basis: 50%;
+		text-align: left;
+	}
+}

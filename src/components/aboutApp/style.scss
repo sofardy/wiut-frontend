@@ -1,0 +1,65 @@
+.about-app-wrapper{
+    h5{
+        margin-top: 100px;
+        @include xl {
+            margin-top: 50px;
+          }
+    
+          @include lg {
+            margin-top: 80px;
+          }
+          @include md {
+            margin-top: 40px;
+          }
+
+    }
+    .app-store-card {
+      background: #000000;
+      border-radius: 6px;
+      color: #fff;
+      padding: 8px 10px;
+      width: 100%;
+      .brand-logo{
+        font-size: 38px;
+        margin-right: 10px;
+      }
+      span{
+        font-size: 13px;
+        line-height: 15px;
+      }
+      p{
+        font-size: 18px;
+        line-height: 19px;
+      }
+    }
+    .qr-code-map{
+        margin-top: 140px;
+        @include xl {
+            margin-top: 80px;
+          }
+    
+          @include lg {
+            margin-top: 20px;
+          }
+          @include md {
+            margin-top: 50px;
+          }
+        .qr-code{
+            font-size: 120px;
+            display: block;
+             @include xl {
+                font-size: 110px;
+              }
+        
+              @include lg {
+                font-size: 100px;
+              }
+              @include md {
+                font-size: 90px;
+              }
+              @include sm {
+                font-size: 80px;
+              }
+        }
+    }
+}

@@ -1,0 +1,367 @@
+.main-contex {
+  padding: 60px 0;
+  @include md {
+    padding: 40px 0;
+  }
+}
+.component-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  @include xl {
+    font-size: 22px;
+  }
+
+  @include lg {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 18px;
+  }
+  @include sm {
+    font-size: 18px;
+  }
+}
+.filters > div{
+  @include md {
+    display: block !important;
+  }
+}
+.filters{
+  .ant-select-selector{
+    border-radius: 25.5px !important;
+    &::before{
+      border: 0 !important;
+      background-color: transparent;
+    }
+  }
+  .ant-radio-button-wrapper{
+    border-radius: 25.5px !important;
+    &::before{
+      display: none !important;
+    }
+    &::after{
+      display: none !important;
+    }
+  }
+}
+// filter readio
+
+.ant-radio-group{
+  @include md {
+    width: 100%;
+  }
+}
+
+.ant-radio-button-wrapper-checked {
+  background: $main-bg-color !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  border: 3px solid $main-border-color !important;
+  &::before {
+    background: $main-bg-color !important;
+  }
+  &:hover{
+    background: $main-bg-color-hover;
+}
+}
+
+
+.filter-radio-item {
+  border: 2px solid $main-border-color !important;
+  height: 40px;
+  padding: 9px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  @include xl {
+    font-size: 16px;
+  }
+
+  @include lg {
+    font-size: 16px;
+  }
+  @include md {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  @include sm {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+// filter select
+.filter-select {
+  width: 180px;
+  @include xl {
+    width: 170px;
+  }
+
+  @include lg {
+    width: 160px;
+  }
+  @include md {
+    margin-top: 20px;
+    width: 100%;
+  }
+  @include sm {
+    width: 100%;
+  }
+}
+
+.ant-select-selector {
+  box-shadow: none !important;
+  border: 1px solid $main-border-color !important;
+  height: 40px !important;
+}
+.ant-select-selector span {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  @include xl {
+    font-size: 16px;
+  }
+
+  @include lg {
+    font-size: 16px;
+  }
+  @include md {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  @include sm {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+
+// slider prev and next button
+.swiper-button-prev{
+    color: $main-border-color !important;
+    left: -2px !important;
+    &:hover{
+        color: #999 !important;
+    }
+}
+
+.swiper-button-next{
+    color: $main-border-color !important;
+    right: -2px !important;
+    &:hover{
+        color: $main-border-color-hover !important;
+    }
+}
+
+.swiper-pagination-bullet-active{
+  background-color: $main-border-color !important;
+}
+
+.swiper-pagination-bullet{
+  background-color: $main-border-color-hover !important;
+}
+
+.swiper-pagination{
+  bottom: -5px !important;
+}
+
+// product card style
+
+.product-hover{
+  transition: 0.1s;
+  border-radius: 20px;
+  &:hover{
+    box-shadow: 0 0 10px 0 rgb(229, 229, 229);
+  }
+}
+
+.product-card {
+  cursor: pointer;
+  text-align: center;
+  transition: 0.1s;
+  &:hover{
+    transform: scale(1.02);
+  }
+  img {
+    height: 150px;
+    width: 85%;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+    @include xl {
+      height: 140px;
+      border-radius: 10px;
+    }
+    @include lg {
+      height: 130px;
+    }
+    @include md {
+      height: 120px;
+    }
+    @include sm {
+      height: 200px;
+    }
+  }
+  .name{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+      @include lg {
+        font-size: 17px;
+    }
+      @include md {
+        font-size: 16px;
+    }
+      @include sm {
+        font-size: 15px;
+    }
+  }
+  .price{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+      @include lg {
+        font-size: 19px;
+    }
+      @include md {
+        font-size: 18px;
+    }
+      @include sm {
+        font-size: 17px;
+    }
+  }
+}
+
+//pagination style
+
+.my-pagination{
+  li{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+    width: 44px;
+    height: 44px;
+    margin-right: 0 !important;
+    border: none !important;
+    border-radius: 50%;
+    // padding: 10px !important;
+    &:hover a{
+      color: #000 !important;
+    }
+    &:hover button{
+      color: #000 !important;
+      border: none !important;
+      // border: 1px solid $main-bg-color !important;
+    }
+    
+    &:hover{
+      border: none;
+      // border: 1px solid $main-bg-color;
+      color: #000 !important;
+    }
+    a{
+      display: inline-block;
+      margin: 10px;
+    }
+    button{
+      border: none !important;
+      border-radius: 50% !important;
+    }
+  }
+  .ant-pagination-item-active{
+    background: $main-border-color;
+    color: #fff;
+    border: none ;
+    border-radius: 50% !important;
+  }
+}
+
+.ant-pagination{
+  width: max-content !important;
+  border: 2px solid $main-border-color !important;
+  border-radius: 28px;
+}
+
+.d-md-none{
+  display: inline-block !important;
+  @include md {
+      display: none !important;
+  }
+}
+.d-md-inline-block{
+  display: none !important;
+  @include md {
+      display: inline-block !important;
+  }
+}
+
+.w-15{
+  width: 15% !important;
+  @media screen and (max-width: 640px) { 
+    width: 100% !important;
+  }
+}
+.w-20{
+  width: 20% !important;
+  @media screen and (max-width: 640px) { 
+    width: 100% !important;
+}
+}
+.w-30{
+  width: 30% !important;
+  @media screen and (max-width: 640px) { 
+    width: 100% !important;
+}
+}
+
+.main-btn{
+    background: $color-white;
+    border: 2px solid $main-border-color;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    border-radius: 25px;
+    &:hover{
+        background: $main-bg-color;
+    }
+      @include lg {
+        font-size: 15px;
+    }
+      @include md {
+        font-size: 14px;
+    }
+      @include sm {
+        font-size: 13px;
+    }
+}
+
+.main-btn-red{
+  background: $main-border-color;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  border-radius: 25px;
+  &:hover{
+      background: $main-border-color-hover;
+  }
+    @include lg {
+      font-size: 15px;
+  }
+    @include md {
+      font-size: 14px;
+  }
+    @include sm {
+      font-size: 13px;
+  }
+}

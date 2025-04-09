@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// Configuration and helpers
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/fontImports";
+
+//components style
+@import '../../components/header/style.scss';
+@import '../../components/main/style.scss';
+@import '../../components/discounts/style.scss';
+@import '../../components/sidebars/mobSibebarStyle.scss';
+@import '../../components/stores/style.scss';
+@import '../../components/viewProduct/style.scss';
+@import '../../components/searchResult/style.scss';
+@import '../../components/aboutApp/style.scss';
+
+
+// global styles
+@import './globalStyles.scss';

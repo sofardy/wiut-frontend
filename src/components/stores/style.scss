@@ -1,0 +1,19 @@
+.store-card {
+  border: 2px solid $main-border-color;
+  border-radius: 30px;
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    @include lg {
+      font-size: 17px;
+    }
+    @include md {
+      font-size: 16px;
+    }
+    @include sm {
+      font-size: 15px;
+    }
+  }
+}

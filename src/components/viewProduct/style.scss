@@ -1,0 +1,193 @@
+.product-view {
+  img {
+    border-radius: 20px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .hight-300 {
+    height: 300px;
+    @include md {
+      height: 100px;
+    }
+    h4 {
+      font-weight: 500;
+      font-size: 28px;
+      color: #000000;
+      @include xl {
+        font-size: 28px;
+      }
+
+      @include lg {
+        font-size: 26px;
+      }
+      @include md {
+        font-size: 24px;
+      }
+      @include sm {
+        font-size: 22px;
+      }
+    }
+    h5 {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 32px;
+      color: #000000;
+      @include xl {
+        font-size: 24px;
+      }
+
+      @include lg {
+        font-size: 22px;
+      }
+      @include md {
+        font-size: 20px;
+      }
+      @include sm {
+        font-size: 18px;
+      }
+    }
+  }
+  .small-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    @include xl {
+      font-size: 16px;
+    }
+
+    @include lg {
+      font-size: 14px;
+    }
+    @include md {
+      font-size: 12px;
+    }
+    @include sm {
+      font-size: 12px;
+    }
+  }
+  .description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 126%;
+    color: #000000;
+    @include xl {
+      font-size: 18px;
+    }
+
+    @include lg {
+      font-size: 17px;
+    }
+    @include md {
+      font-size: 16px;
+    }
+    @include sm {
+      font-size: 15px;
+    }
+  }
+  .w-100-mobile {
+    @include md {
+      width: 100%;
+      text-align: left !important;
+    }
+  }
+  tbody,
+  thead {
+    tr {
+      border: 0;
+      display: block;
+      margin: 12px 0;
+
+      th {
+        display: inline-block;
+        // width: 20%;
+        padding: 0px 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        @include xl {
+          font-size: 16px;
+        }
+
+        @include lg {
+          font-size: 14px;
+        }
+        @include md {
+          font-size: 12px;
+        }
+        @include sm {
+          font-size: 12px;
+        }
+      }
+      td {
+        display: inline-block;
+        // width: 20%;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        @include xl {
+          font-size: 16px;
+        }
+
+        @include lg {
+          font-size: 14px;
+        }
+        @include md {
+          font-size: 12px;
+        }
+        @include sm {
+          font-size: 12px;
+        }
+      }
+    }
+    .solid {
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 34px;
+    }
+  }
+  input {
+    height: 40px;
+  }
+  .ant-slider-rail {
+    height: 8px;
+  }
+  .ant-slider-track {
+    background-color: $main-bg-color !important;
+    height: 8px;
+  }
+  .ant-slider-step {
+    .ant-slider-dot {
+      width: 11px;
+      height: 11px;
+      border-color: $main-bg-color-hover;
+    }
+  }
+  .ant-slider-handle {
+    width: 16px;
+    height: 16px;
+    background-color: $main-border-color;
+    border-color: $main-border-color;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #000000;
+    border-color: #000000;
+    }
+    .ant-checkbox-input:focus + .ant-checkbox-inner {
+        border-color: #000000;
+    }
+    .h-md-400{
+        height: 400px !important;
+        @include md{
+            height: 300px !important;
+        }
+    }
+    .filter-select{
+      border: 1px solid rgba(221, 14, 29, 0.3) !important;
+    }  
+    .ant-select-selector{
+      border: 1px solid rgba(221, 14, 29, 0.3) !important;
+    }
+}
