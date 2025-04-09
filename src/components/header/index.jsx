@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Input, Dropdown, Menu, Space } from "antd";
+import { Input, Dropdown, Menu } from "antd";
 import { FiSearch, FiChevronDown } from "react-icons/fi";
 import { FaRegUserCircle, FaBars } from "react-icons/fa";
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useWindowSize from "../../hooks/useWindowSize";
 import MobileSidebar from "../sidebars/mobileSidebar";
 import useDebounce from "../../hooks/useDebounse";
@@ -21,7 +21,6 @@ const HeaderComp = () => {
 	const { width } = useWindowSize();
 	const debouncedSearch = useDebounce(search, 1200);
 	const navigate = useNavigate();
-	const location = useLocation();
 	const scrollPosition = useScrollTop();
 
 	useEffect(() => {

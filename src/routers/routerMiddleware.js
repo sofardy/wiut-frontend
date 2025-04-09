@@ -23,11 +23,11 @@ const RoutesMiddleware = () => {
               path={item?.path}
               exact={item.exact}
               element={
-                item.config.structure == "clientLayout" ? (
+                item.config.structure === "clientLayout" ? (
                   <ClientLayout>{createComponent(item.component)}</ClientLayout>
-                    // <AdminLayout>{createComponent(item.component)}</AdminLayout>
-                    ) : item.config.structure == "layout" ? (
-                      <AdminLayout>{createComponent(item.component)}</AdminLayout>
+                  // <AdminLayout>{createComponent(item.component)}</AdminLayout>
+                ) : item.config.structure === "layout" ? (
+                  <AdminLayout>{createComponent(item.component)}</AdminLayout>
                   // <ClientLayout>{createComponent(item.component)}</ClientLayout>
                 ) : (
                   <NoneLayout>{createComponent(item.component)}</NoneLayout>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import axios from "axios";
 import "swiper/css/pagination";
 
