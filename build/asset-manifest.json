@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a31c4a63.css",
+    "main.js": "/static/js/main.d5f5106b.js",
+    "static/js/787.1b9c052a.chunk.js": "/static/js/787.1b9c052a.chunk.js",
+    "static/media/about-app.svg": "/static/media/about-app.81e0a785261330826f318db1178eb567.svg",
+    "static/media/phone.jpg": "/static/media/phone.5d143efd7f4c8450d286.jpg",
+    "static/media/logo-img.svg": "/static/media/logo-img.0ddde6d2ce3c7960f6b7595e4b3a0dad.svg",
+    "static/media/logo-text.svg": "/static/media/logo-text.5964dbd724fee9bc31775c3e93b8d24c.svg",
+    "static/media/logo-mobile.svg": "/static/media/logo-mobile.0777c539dbb18cd01c43d0e809025955.svg",
+    "static/media/Gilroy-Medium.woff": "/static/media/Gilroy-Medium.7299347ad34bddeae499.woff",
+    "static/media/Gilroy-Bold.woff": "/static/media/Gilroy-Bold.1d86ffe66e2c848892fe.woff",
+    "static/media/Gilroy-SemiBold.woff": "/static/media/Gilroy-SemiBold.b53159dea9c94f832f80.woff",
+    "static/media/Gilroy-Regular.woff": "/static/media/Gilroy-Regular.826d04fde24bbc0435f6.woff",
+    "static/media/Gilroy-Bold.woff2": "/static/media/Gilroy-Bold.a890101e1292bc8c92fd.woff2",
+    "static/media/Gilroy-Medium.woff2": "/static/media/Gilroy-Medium.e2e018bbd3526e156ef0.woff2",
+    "static/media/Gilroy-SemiBold.woff2": "/static/media/Gilroy-SemiBold.70561b455050e2a7e73e.woff2",
+    "static/media/Gilroy-Regular.woff2": "/static/media/Gilroy-Regular.a89ac858796c04bb651a.woff2",
+    "index.html": "/index.html",
+    "main.a31c4a63.css.map": "/static/css/main.a31c4a63.css.map",
+    "main.d5f5106b.js.map": "/static/js/main.d5f5106b.js.map",
+    "787.1b9c052a.chunk.js.map": "/static/js/787.1b9c052a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a31c4a63.css",
+    "static/js/main.d5f5106b.js"
+  ]
+}
