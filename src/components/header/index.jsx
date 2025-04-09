@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Input, Dropdown, Menu } from "antd";
 import { FiSearch, FiChevronDown } from "react-icons/fi";
-import { FaRegUserCircle, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useWindowSize from "../../hooks/useWindowSize";
 import MobileSidebar from "../sidebars/mobileSidebar";
 import useDebounce from "../../hooks/useDebounse";
 import useScrollTop from "../../hooks/useScrollTop";
 import axios from "axios";
-import LogoImg from "../../assets/images/logo-img.svg";
-import LogoText from "../../assets/images/logo-text.svg";
-import LogoMobile from "../../assets/images/logo-mobile.svg";
+import "../../styles/header.css"; // Убедитесь, что путь к файлу корректный
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
@@ -64,15 +62,8 @@ const HeaderComp = () => {
 				<div className="d-flex justify-content-between align-items-center flex-none">
 					<div className="d-flex justify-content-between align-items-center">
 						<FaBars onClick={() => setIsOpen(!isOpen)} className="user-icon me-3 desctop-d-none" />
-						<Link to="/">
-							{width > 576 ? (
-								<div className="d-flex justify-content-start align-items-center">
-									<img className="logo-img" src={LogoImg} alt="" />
-									<img className="logo-text" src={LogoText} alt="" />
-								</div>
-							) : (
-								<img className="logo-mobile" src={LogoMobile} alt="" />
-							)}
+						<Link to="/" className="logo-text">
+							TezTop
 						</Link>
 						<Input
 							style={{ borderRadius: "30px" }}
@@ -101,7 +92,7 @@ const HeaderComp = () => {
 						>
 							Выгодные предложения
 						</NavLink>
-						<FaRegUserCircle className="user-icon" />
+						{/* <FaRegUserCircle className="user-icon" /> */}
 					</div>
 				</div>
 			</div>
