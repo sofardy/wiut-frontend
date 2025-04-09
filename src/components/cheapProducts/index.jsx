@@ -27,7 +27,7 @@ const CheapProducts = () => {
 		}
 
 		axios
-			.get("http://wiut:8000/api/products")
+			.get(`${process.env.REACT_APP_API_URL}/api/products`)
 			.then(response => {
 				setdata(response.data.data);
 			})

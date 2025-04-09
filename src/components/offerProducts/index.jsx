@@ -15,7 +15,7 @@ const OfferProducts = () => {
 	// Fetch categories
 	useEffect(() => {
 		axios
-			.get("http://wiut:8000/api/categories")
+			.get(`${process.env.REACT_APP_API_URL}/api/categories`)
 			.then(response => {
 				setCategories(response.data.data);
 			})
@@ -28,7 +28,7 @@ const OfferProducts = () => {
 	useEffect(() => {
 		const categoryFilter = selectedCategory ? `?filter[category_id]=${selectedCategory}` : "";
 		axios
-			.get(`http://wiut:8000/api/products${categoryFilter}`)
+			.get(`${process.env.REACT_APP_API_URL}/api/products${categoryFilter}`)
 			.then(response => {
 				setData(response.data.data);
 			})

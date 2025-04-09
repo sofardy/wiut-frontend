@@ -32,7 +32,7 @@ const Stores = () => {
 								<Avatar
 									size={60}
 									className="mb-4"
-									src={`http://wiut:8000/storage/${shop.logo}`}
+									src={`${process.env.REACT_APP_API_URL}/storage/${shop.logo}`}
 									alt={shop.name}
 									icon={<IoLogoUsd />}
 								/>
