@@ -29,7 +29,7 @@ const PopularProducts = () => {
 
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/api/products`)
+			.get(`${process.env.REACT_APP_API_BASE_URL}/products`)
 			.then(response => {
 				setdata(response.data.data);
 			})

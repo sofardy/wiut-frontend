@@ -29,13 +29,7 @@ const Stores = () => {
 					{data.map(shop => (
 						<div key={shop.id} className="col-xl-2 col-lg-3 col-md-4 col-6">
 							<div className="store-card px-2 py-4 text-center mb-4">
-								<Avatar
-									size={60}
-									className="mb-4"
-									src={`${process.env.REACT_APP_API_URL}/storage/${shop.logo}`}
-									alt={shop.name}
-									icon={<IoLogoUsd />}
-								/>
+								<Avatar size={60} className="mb-4" src={`${shop.logo}`} alt={shop.name} icon={<IoLogoUsd />} />
 								<p className="mt-1">{shop.name}</p>
 							</div>
 						</div>

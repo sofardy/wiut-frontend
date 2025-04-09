@@ -15,7 +15,7 @@ const OfferProducts = () => {
 	// Fetch categories
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/api/categories`)
+			.get(`${process.env.REACT_APP_API_BASE_URL}/categories`)
 			.then(response => {
 				setCategories(response.data.data);
 			})
@@ -28,7 +28,7 @@ const OfferProducts = () => {
 	useEffect(() => {
 		const categoryFilter = selectedCategory ? `?filter[category_id]=${selectedCategory}` : "";
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/api/products${categoryFilter}`)
+			.get(`${process.env.REACT_APP_API_BASE_URL}/products${categoryFilter}`)
 			.then(response => {
 				setData(response.data.data);
 			})

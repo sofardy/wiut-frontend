@@ -27,12 +27,18 @@ const CheapProducts = () => {
 		}
 
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/api/products`)
+			.get(`${process.env.REACT_APP_API_BASE_URL}/products`)
 			.then(response => {
-				setdata(response.data.data);
+				if (response.data && response.data.data) {
+					setdata(response.data.data);
+				} else {
+					console.error("Invalid API response:", response);
+					setdata([]);
+				}
 			})
 			.catch(error => {
 				console.error("Error fetching products:", error);
+				setdata([]);
 			});
 	}, [width]);
 
@@ -95,14 +101,20 @@ const CheapProducts = () => {
 				>
 					{data.map((item, index) => (
 						<SwiperSlide key={item.id || index} style={{ zIndex: "100" }}>
-							<Link to={`/product/${item.slug}`}>
-								<ProductCard
-									image={item.image}
-									name={item.title}
-									price={`${item.price || "Цена не указана"} сум`}
-									buttonText="Cмотреть детали"
-								/>
-							</Link>
+							{item.image && item.slug ? (
+								<Link to={`/product/${item.slug}`}>
+									<ProductCard
+										image={item.image}
+										name={item.title || "Название не указано"}
+										price={`${item.price || "Цена не указана"} сум`}
+										buttonText="Cмотреть детали"
+									/>
+								</Link>
+							) : (
+								<div className="product-card-placeholder">
+									<p>Данные недоступны</p>
+								</div>
+							)}
 						</SwiperSlide>
 					))}
 				</Swiper>

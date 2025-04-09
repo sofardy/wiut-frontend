@@ -15,7 +15,7 @@ const CategoryProducts = () => {
 	// Fetch categories
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/api/categories`)
+			.get(`${process.env.REACT_APP_API_BASE_URL}/categories`)
 			.then(response => {
 				setCategories(response.data.data);
 				const activeCategory = response.data.data.find(category => category.slug === slug);
@@ -30,7 +30,7 @@ const CategoryProducts = () => {
 	useEffect(() => {
 		if (currentCategory) {
 			axios
-				.get(`${process.env.REACT_APP_API_URL}/api/products?filter[category_id]=${currentCategory.id}`)
+				.get(`${process.env.REACT_APP_API_BASE_URL}/products?filter[category_id]=${currentCategory.id}`)
 				.then(response => {
 					setData(response.data.data);
 				})
