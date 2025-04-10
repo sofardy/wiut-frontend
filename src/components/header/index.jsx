@@ -75,7 +75,7 @@ const HeaderComp = () => {
 					<div className="d-flex justify-content-start align-items-center mobile-d-none ms-2">
 						<Dropdown overlay={categoryMenu}>
 							<p className="mb-0 header-text" style={{ whiteSpace: "nowrap", cursor: "pointer" }}>
-								Все категории <FiChevronDown />
+								All Categories <FiChevronDown />
 							</p>
 						</Dropdown>
 						<NavLink
@@ -83,14 +83,14 @@ const HeaderComp = () => {
 							to="/selected-products"
 							style={{ whiteSpace: "nowrap" }}
 						>
-							Популярные продукты
+							Popular Products
 						</NavLink>
 						<NavLink
 							className={({ isActive }) => (isActive ? "mb-0 header-text active-link" : "mb-0 header-text")}
 							to="/offer-products"
 							style={{ whiteSpace: "nowrap" }}
 						>
-							Выгодные предложения
+							Best Offers
 						</NavLink>
 						{/* <FaRegUserCircle className="user-icon" /> */}
 					</div>

@@ -24,7 +24,7 @@ const Stores = () => {
 	return (
 		<div className="container">
 			<div className="main-contex">
-				<p className="component-title">Топ магазины</p>
+				<p className="component-title">Top Stores</p>
 				<div className="row">
 					{data.map(shop => (
 						<div key={shop.id} className="col-xl-2 col-lg-3 col-md-4 col-6">

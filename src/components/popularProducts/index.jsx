@@ -49,15 +49,15 @@ const PopularProducts = () => {
 	return (
 		<div className="container">
 			<div className="main-contex">
-				<p className="component-title">Популярные товары</p>
+				<p className="component-title">Popular Products</p>
 				<div className="filters mb-3">
 					<div className="d-flex justify-content-between align-items-center">
 						<Radio.Group defaultValue="a" buttonStyle="solid">
 							<Radio.Button className="filter-radio-item me-3" value="a">
-								Все товары
+								All Products
 							</Radio.Button>
 							<Radio.Button className="filter-radio-item" value="b">
-								По лучшей цене
+								Best Price
 							</Radio.Button>
 							\
 						</Radio.Group>
@@ -65,7 +65,7 @@ const PopularProducts = () => {
 							allowClear
 							className="filter-select"
 							showSearch
-							placeholder="Все категории"
+							placeholder="All categories"
 							optionFilterProp="children"
 							onChange={onChange}
 							onSearch={onSearch}
@@ -98,8 +98,8 @@ const PopularProducts = () => {
 								<ProductCard
 									image={item.image}
 									name={item.title}
-									price={`${item.price || "Цена не указана"} сум`}
-									buttonText="Cмотреть детали"
+									price={`${item.price || "Price not specified"} сум`}
+									buttonText="View Details"
 								/>
 							</Link>
 						</SwiperSlide>

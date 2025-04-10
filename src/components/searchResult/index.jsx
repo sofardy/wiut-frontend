@@ -51,15 +51,15 @@ const SearchResult = () => {
 				<div className="filters mb-5">
 					<div className="row">
 						<div className="col-md-4 pt-2">
-							<span className="component-title me-3">Результаты поиска:</span>
-							<h6 className="d-inline-block">{query || "Все товары"}</h6>
+							<span className="component-title me-3">Search results:</span>
+							<h6 className="d-inline-block">{query || "All products"}</h6>
 						</div>
 						<div className="col-md-4">
 							<Select
 								allowClear
 								className="filter-select w-100 mt-2"
 								showSearch
-								placeholder="Все категории"
+								placeholder="All categories"
 								optionFilterProp="children"
 								onChange={handleCategoryChange}
 								filterOption={(input, option) => (option?.children).toLowerCase().includes(input.toLowerCase())}
@@ -83,26 +83,24 @@ const SearchResult = () => {
 								<div className="d-flex align-items-start flex-column h-220">
 									<h6 className="mb-auto bd-highlight">{item.title}</h6>
 									<div className="bd-highlight">
-										<p>Модель: {item.model || "Не указано"}</p>
+										<p>Model: {item.model || "Not specified"}</p>
 										<Link to={`/product/${item.slug}`}>
-											<button className="py-2 px-4 mt-3 d-md-none main-btn">
-												Смотреть на {item.shop || "магазин"}
-											</button>
+											<button className="py-2 px-4 mt-3 d-md-none main-btn">View on {item.shop || "store"}</button>
 										</Link>
 									</div>
 								</div>
 							</Col>
 							<Col xl={5} md={12} span={12}>
-								<h5>Магазин</h5>
-								<p className="mb-3">{item.shop || "Не указано"}</p>
+								<h5>Store</h5>
+								<p className="mb-3">{item.shop || "Not specified"}</p>
 							</Col>
 							<Col xl={5} md={12} span={12}>
-								<h5>Текущая цена:</h5>
-								<p className="mb-3">{item.price || "Нет в наличии"} сум</p>
+								<h5>Current price:</h5>
+								<p className="mb-3">{item.price || "Out of stock"} UZS</p>
 							</Col>
 							<Link to={`/product/${item.slug}`}>
 								<button className="py-2 px-4 mt-3 d-md-inline-block w-100 main-btn">
-									Смотреть на {item.shop || "магазин"}
+									View on {item.shop || "store"}
 								</button>
 							</Link>
 						</Row>

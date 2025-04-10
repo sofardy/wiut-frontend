@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const CategoryProducts = () => {
-	const { slug } = useParams(); // Получение slug категории из URL
+	const { slug } = useParams(); // Get the category slug from the URL
 	const [data, setData] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [currentCategory, setCurrentCategory] = useState(null);
@@ -43,22 +43,22 @@ const CategoryProducts = () => {
 	return (
 		<div className="container">
 			<div className="main-contex">
-				<p className="component-title">{currentCategory ? currentCategory.name : "Категория"}</p>
+				<p className="component-title">{currentCategory ? currentCategory.name : "Category"}</p>
 				<div className="filters mb-3">
 					<div className="d-flex justify-content-between align-items-center">
 						<Radio.Group defaultValue="a" buttonStyle="solid">
 							<Radio.Button className="filter-radio-item me-3" value="a">
-								Все товары
+								All Products
 							</Radio.Button>
 							<Radio.Button className="filter-radio-item" value="b">
-								По лучшей цене
+								Best Price
 							</Radio.Button>
 						</Radio.Group>
 						<Select
 							allowClear
 							className="filter-select"
 							showSearch
-							placeholder="Все категории"
+							placeholder="All Categories"
 							optionFilterProp="children"
 							onChange={value => {
 								const selectedCategory = categories.find(category => category.id === value);
@@ -81,8 +81,8 @@ const CategoryProducts = () => {
 								<div className="product-card product-hover py-3 px-2">
 									<img src={item.image} alt={item.title} />
 									<p className="name mt-3 mb-1">{item.title}</p>
-									<p className="price mb-1">{item.price || "Цена не указана"} сум</p>
-									<button className="py-2 px-4 mt-3 main-btn">Cмотреть детали</button>
+									<p className="price mb-1">{item.price || "Price not specified"} sum</p>
+									<button className="py-2 px-4 mt-3 main-btn">View Details</button>
 								</div>
 							</Link>
 						</div>

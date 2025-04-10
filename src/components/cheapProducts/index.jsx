@@ -53,18 +53,18 @@ const CheapProducts = () => {
 	return (
 		<div className="container">
 			<div className="main-contex">
-				<p className="component-title">Лучшее падение цен</p>
+				<p className="component-title">Best Price Drop</p>
 				<div className="filters mb-3">
 					<div className="d-flex justify-content-between align-items-center">
 						<Radio.Group defaultValue="a" buttonStyle="solid">
 							<Radio.Button className="filter-radio-item" value="a">
-								Самые последние
+								Latest
 							</Radio.Button>
 							<Radio.Button className="filter-radio-item mx-3" value="b">
-								Лучшие ежедневные
+								Best Daily
 							</Radio.Button>
 							<Radio.Button className="filter-radio-item" value="c">
-								Лучшие еженедельные
+								Best Weekly
 							</Radio.Button>
 						</Radio.Group>
 						<Select
@@ -72,7 +72,7 @@ const CheapProducts = () => {
 							allowClear
 							className="filter-select"
 							showSearch
-							placeholder="Все категории"
+							placeholder="All Categories"
 							optionFilterProp="children"
 							onChange={onChange}
 							onSearch={onSearch}
@@ -105,14 +105,14 @@ const CheapProducts = () => {
 								<Link to={`/product/${item.slug}`}>
 									<ProductCard
 										image={item.image}
-										name={item.title || "Название не указано"}
-										price={`${item.price || "Цена не указана"} сум`}
-										buttonText="Cмотреть детали"
+										name={item.title || "Not specified name"}
+										price={`${item.price || "Price not specified"} sum`}
+										buttonText="View details"
 									/>
 								</Link>
 							) : (
 								<div className="product-card-placeholder">
-									<p>Данные недоступны</p>
+									<p>Data not available</p>
 								</div>
 							)}
 						</SwiperSlide>

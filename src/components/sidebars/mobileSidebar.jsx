@@ -60,7 +60,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
 						to="/selected-products"
 						style={{ whiteSpace: "nowrap" }}
 					>
-						Популярные продукты
+						Popular Products
 					</NavLink>
 					<br />
 					<NavLink
@@ -72,7 +72,7 @@ const MobileSidebar = ({ isOpen, setIsOpen }) => {
 						to="/offer-products"
 						style={{ whiteSpace: "nowrap" }}
 					>
-						Выгодные предложения
+						Best Offers
 					</NavLink>
 				</div>
 			</div>

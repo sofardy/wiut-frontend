@@ -13,10 +13,10 @@ const CollapseProduct = ({ offers }) => {
 				<Table>
 					<Thead>
 						<Tr>
-							<Th className="w-15">Продавец</Th>
-							<Th className="w-15">Цена</Th>
-							<Th className="w-20">Дата обновления</Th>
-							<Th className="w-30 text-end">Действие</Th>
+							<Th className="w-15">Seller</Th>
+							<Th className="w-15">Price</Th>
+							<Th className="w-20">Updated Date</Th>
+							<Th className="w-30 text-end">Action</Th>
 						</Tr>
 					</Thead>
 					<Tbody>
@@ -32,7 +32,7 @@ const CollapseProduct = ({ offers }) => {
 										rel="noopener noreferrer"
 										className="py-2 px-4 main-btn-red"
 									>
-										Перейти в {offer.shop}
+										Go to {offer.shop}
 									</a>
 								</Td>
 							</Tr>
@@ -43,11 +43,11 @@ const CollapseProduct = ({ offers }) => {
 								style={{ marginLeft: "22px", cursor: "pointer" }}
 								onClick={() => setCount(offers.length)}
 							>
-								Показать ещё <FiChevronDown />
+								Show more <FiChevronDown />
 							</p>
 						) : (
 							<p className="description" style={{ marginLeft: "22px", cursor: "pointer" }} onClick={() => setCount(2)}>
-								Показать меньше <FiChevronUp />
+								Show less <FiChevronUp />
 							</p>
 						)}
 					</Tbody>

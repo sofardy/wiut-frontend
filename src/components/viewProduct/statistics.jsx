@@ -119,19 +119,17 @@ const StatisticsProduct = () => {
 			<div className="filters mb-3">
 				<div className="row">
 					<div className="col-md-4">
-						<span className="small-text">Магазин</span>
+						<span className="small-text">Store</span>
 						<Input style={{ borderRadius: "25.5px" }} placeholder="Search..." className="filter-select w-100 mt-2" />
 					</div>
 					<div className="col-md-4">
-						<span className="small-text">Магазин</span>
+						<span className="small-text">Store</span>
 						<Select
 							allowClear
 							className="w-100 mt-2"
 							showSearch
-							placeholder="Все категории"
+							placeholder="All categories"
 							optionFilterProp="children"
-							//   onChange={onChange}
-							//   onSearch={onSearch}
 							defaultActiveFirstOption={true}
 							filterOption={(input, option) => (option?.children).toLowerCase().includes(input.toLowerCase())}
 						>
@@ -141,13 +139,13 @@ const StatisticsProduct = () => {
 						</Select>
 					</div>
 					<div className="col-md-4">
-						<span className="small-text">Магазин</span>
+						<span className="small-text">Store</span>
 						<Input style={{ borderRadius: "25.5px" }} placeholder="Search..." className="filter-select w-100 mt-2" />
 					</div>
 				</div>
 			</div>
 			<div className="main-contex">
-				<p className="component-title">История цены</p>
+				<p className="component-title">Price History</p>
 				<div className="row">
 					<div className="col-md-8">
 						<Column {...config} />
@@ -155,18 +153,18 @@ const StatisticsProduct = () => {
 					<div className="col-md-4">
 						<div className="d-flex flex-column bd-highlight h-md-400">
 							<div className="bd-highlight">
-								<p className="description">Временной диапазон</p>
+								<p className="description">Time Range</p>
 								<Slider marks={marks} defaultValue={37} />
 							</div>
 							<div className="bd-highlight my-auto">
-								<p className="description mt-5">Временной диапазон</p>
+								<p className="description mt-5">Time Range</p>
 								<div className="mb-2">
 									<Checkbox>alifshop.uz</Checkbox>
 								</div>
 								<Checkbox>alifshop.uz</Checkbox>
 							</div>
 							<div className="bd-highlight">
-								<button className="py-2 px-4 main-btn">Смотреть на alifshop</button>
+								<button className="py-2 px-4 main-btn">View on alifshop</button>
 							</div>
 						</div>
 					</div>

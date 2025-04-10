@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const AboutProduct = ({ attributes }) => {
 	return (
 		<div>
-			<h4>Детали товара</h4>
+			<h4>Product Details</h4>
 			<div className="row">
 				{attributes.map(attribute => (
 					<div className="col-md-6 col-12 mb-3" key={attribute.id}>

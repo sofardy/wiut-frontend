@@ -31,11 +31,11 @@ const ProductView = () => {
 	}, [slug]); // Добавление slug в зависимости useEffect
 
 	if (!slug) {
-		return <div>Ошибка: slug не передан в URL.</div>;
+		return <div>Error: slug not provided in URL.</div>;
 	}
 
 	if (!product) {
-		return <div>Загрузка...</div>;
+		return <div>Loading...</div>;
 	}
 
 	return (
@@ -70,14 +70,13 @@ const ProductView = () => {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="py-2 px-4 mt-3 main-btn"
-										style={{ background: "$color-white", border: "2px solid $main-border-color" }}
 									>
-										Смотреть на {product.offers[0]?.shop}
+										View on {product.offers[0]?.shop}
 									</a>
 								</div>
 							</div>
 							<p className="mb-0 mt-5 d-md-inline-block description">
-								Подпишитесь на уведомления о снижении цен и начните отслеживать этот продукт, заполнив форму ниже.
+								Subscribe to price drop notifications and start tracking this product by filling out the form below.
 							</p>
 						</div>
 					</div>
