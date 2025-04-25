@@ -3,7 +3,18 @@ import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import PropTypes from "prop-types";
 
+/**
+ * Компонент для отображения таблицы с предложениями продукта от разных продавцов.
+ * Позволяет сворачивать/разворачивать список предложений.
+ * @param {Array<Object>} offers - Массив объектов с предложениями.
+ * @param {number} offers[].id - Уникальный идентификатор предложения.
+ * @param {string} offers[].shop - Название магазина.
+ * @param {string} offers[].price - Цена продукта.
+ * @param {string} offers[].updated_at_price - Дата последнего обновления цены.
+ * @param {string} offers[].shop_product_url - URL продукта в магазине.
+ */
 const CollapseProduct = ({ offers }) => {
+	// Состояние для хранения количества отображаемых предложений
 	const [count, setCount] = useState(2);
 
 	return (

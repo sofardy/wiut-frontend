@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Компонент для отображения деталей (атрибутов) продукта.
+ * @param {Array<Object>} attributes - Массив объектов с атрибутами продукта.
+ * @param {number} attributes[].id - Уникальный идентификатор атрибута.
+ * @param {string} attributes[].name - Название атрибута.
+ * @param {string} attributes[].value - Значение атрибута.
+ */
 const AboutProduct = ({ attributes }) => {
 	return (
 		<div>

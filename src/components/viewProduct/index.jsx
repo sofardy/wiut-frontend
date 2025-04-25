@@ -1,51 +1,66 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import CollapseProduct from "./collapseProduct";
-import StatisticsProduct from "./statistics";
-import { Radio } from "antd";
-import AboutProduct from "./aboutPtroduct";
-import { AiOutlineHeart } from "react-icons/ai";
-import axios from "axios";
+import { useParams } from "react-router-dom"; // Хук для получения параметров из URL
+import CollapseProduct from "./collapseProduct"; // Компонент для отображения предложений других продавцов
+import StatisticsProduct from "./statistics"; // Компонент для отображения статистики цен
+import { Radio } from "antd"; // Компонент Radio из Ant Design
+import AboutProduct from "./aboutPtroduct"; // Компонент для отображения деталей продукта
+import { AiOutlineHeart } from "react-icons/ai"; // Иконка сердца
+import axios from "axios"; // Библиотека для HTTP-запросов
 
+// Базовый URL API, берется из переменных окружения
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
+/**
+ * Компонент страницы просмотра отдельного продукта.
+ * Загружает данные продукта по slug из URL и отображает информацию,
+ * предложения других продавцов, статистику цен и детали продукта.
+ */
 const ProductView = () => {
-	const { slug } = useParams(); // Получение slug из URL
+	const { slug } = useParams(); // Получение slug продукта из URL
+	// Состояние для переключения между статистикой (1) и деталями продукта (2)
 	const [statistic, setStatistic] = useState(1);
+	// Состояние для хранения данных загруженного продукта
 	const [product, setProduct] = useState(null);
 
+	// Эффект для загрузки данных продукта при монтировании компонента или изменении slug
 	useEffect(() => {
 		if (!slug) {
-			console.error("Slug is undefined");
+			console.error("Slug is undefined"); // Обработка случая, если slug отсутствует
 			return;
 		}
 
+		// Выполнение GET-запроса к API для получения данных продукта
 		axios
 			.get(`${API_BASE_URL}/products/${slug}`)
 			.then(response => {
-				setProduct(response.data.data);
+				setProduct(response.data.data); // Сохранение полученных данных в состоянии
 			})
 			.catch(error => {
-				console.error("Error fetching product:", error);
+				console.error("Error fetching product:", error); // Обработка ошибки загрузки
 			});
-	}, [slug]); // Добавление slug в зависимости useEffect
+	}, [slug]); // Зависимость эффекта от slug
 
+	// Если slug отсутствует в URL, показать ошибку
 	if (!slug) {
 		return <div>Error: slug not provided in URL.</div>;
 	}
 
+	// Если данные продукта еще не загружены, показать индикатор загрузки
 	if (!product) {
 		return <div>Loading...</div>;
 	}
 
+	// Рендеринг компонента
 	return (
 		<div className="container">
 			<div className="main-contex">
 				<div className="product-view">
 					<div className="row">
+						{/* Левая колонка: Изображение продукта */}
 						<div className="col-md-4">
 							<img src={product.image} className="w-100" alt={product.title} />
 						</div>
+						{/* Средняя колонка: Название и описание продукта */}
 						<div className="col-md-5">
 							<div className="d-flex align-items-start flex-column hight-300">
 								<div className="mb-auto bd-highlight">
@@ -56,15 +71,22 @@ const ProductView = () => {
 								</div>
 							</div>
 						</div>
+						{/* Правая колонка: Цена, магазин, кнопка "Избранное", ссылка на магазин */}
 						<div className="col-md-3">
 							<div className="d-flex align-items-end flex-column hight-300">
 								<div className="mb-auto bd-highlight text-end w-100-mobile">
-									<AiOutlineHeart className="mt-md-5 mb-2" style={{ fontSize: "22px" }} />
-									<h5 className="mb-0">{product.price} сум</h5>
-									<span className="small-text d-block mb-2">{product.offers[0]?.shop}</span>
-									<span className="small-text">{new Date(product.offers[0]?.updated_at_price).toLocaleString()}</span>
+									<AiOutlineHeart className="mt-md-5 mb-2" style={{ fontSize: "22px" }} />{" "}
+									{/* Иконка "Добавить в избранное" */}
+									<h5 className="mb-0">{product.price} сум</h5> {/* Цена */}
+									<span className="small-text d-block mb-2">{product.offers[0]?.shop}</span>{" "}
+									{/* Первый магазин из предложений */}
+									<span className="small-text">
+										{new Date(product.offers[0]?.updated_at_price).toLocaleString()}
+									</span>{" "}
+									{/* Дата обновления цены первого предложения */}
 								</div>
 								<div className="bd-highlight w-100-mobile">
+									{/* Кнопка-ссылка на страницу продукта в магазине */}
 									<a
 										href={product.offers[0]?.shop_product_url}
 										target="_blank"
@@ -80,7 +102,11 @@ const ProductView = () => {
 							</p>
 						</div>
 					</div>
+
+					{/* Компонент с таблицей предложений других продавцов */}
 					<CollapseProduct offers={product.offers} />
+
+					{/* Переключатель между статистикой и деталями */}
 					<div className="filters mb-3">
 						<div className="d-flex justify-content-between align-items-center">
 							<Radio.Group defaultValue={1} onChange={e => setStatistic(e.target.value)} buttonStyle="solid">
@@ -93,6 +119,8 @@ const ProductView = () => {
 							</Radio.Group>
 						</div>
 					</div>
+
+					{/* Условный рендеринг: Статистика или Детали продукта */}
 					{statistic === 1 ? <StatisticsProduct /> : <AboutProduct attributes={product.attributes} />}
 				</div>
 			</div>

@@ -6,6 +6,11 @@ import "swiper/css/navigation";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
+/**
+ * Компонент для отображения списка выбранных или популярных продуктов.
+ * Позволяет фильтровать продукты по категориям и отображает их
+ * в виде сетки с пагинацией.
+ */
 const SelectedProducts = () => {
 	const [data, setData] = useState([]);
 	const [categories, setCategories] = useState([]);
@@ -14,7 +19,7 @@ const SelectedProducts = () => {
 
 	const { Option } = Select;
 
-	// Fetch categories
+	// Эффект для загрузки категорий при монтировании
 	useEffect(() => {
 		axios
 			.get(`${API_BASE_URL}/categories`)
@@ -26,8 +31,9 @@ const SelectedProducts = () => {
 			});
 	}, []);
 
-	// Fetch products
+	// Эффект для загрузки продуктов при изменении выбранной категории
 	useEffect(() => {
+		// Формирование строки фильтра, если категория выбрана
 		const categoryFilter = selectedCategory ? `?filter[category_id]=${selectedCategory}` : "";
 		axios
 			.get(`${API_BASE_URL}/products${categoryFilter}`)
@@ -39,9 +45,18 @@ const SelectedProducts = () => {
 			});
 	}, [selectedCategory]);
 
+	// Обработчик изменения выбранной категории
 	const handleCategoryChange = value => {
 		setSelectedCategory(value);
+		setCurrentPage(1); // Сброс на первую страницу при смене категории
 	};
+
+	// TODO: Реализовать логику пагинации на стороне клиента или сервера
+	// Расчет индексов для текущей страницы
+	const pageSize = 12;
+	const indexOfLastProduct = currentPage * pageSize;
+	const indexOfFirstProduct = indexOfLastProduct - pageSize;
+	const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
 
 	return (
 		<div className="container">
@@ -75,7 +90,7 @@ const SelectedProducts = () => {
 					</div>
 				</div>
 				<div className="row">
-					{data.map(item => (
+					{currentProducts.map(item => (
 						<div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
 							<Link to={`/product/${item.slug}`}>
 								<div className="product-card product-hover py-3 px-2">
@@ -91,7 +106,7 @@ const SelectedProducts = () => {
 						<Pagination
 							current={currentPage}
 							total={data.length}
-							pageSize={12}
+							pageSize={pageSize}
 							onChange={page => setCurrentPage(page)}
 						/>
 					</div>
